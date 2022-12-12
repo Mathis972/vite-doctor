@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <router-link class="m-5" to="/login">Go to Login</router-link>
