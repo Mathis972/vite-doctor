@@ -114,7 +114,7 @@ async function signOut() {
             <p
               v-for="attr in attributes"
               :key="attr.key"
-              class="text-xs text-black leading-tight rounded-sm p-1 mt-0 mb-1"
+              class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
               :class="attr.customData.class"
             >
               {{ attr.customData.label }}
