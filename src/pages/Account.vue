@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 
 import { supabase } from '../supabase';
 const session = ref();
-const appointments = ref([]);
+const appointments = ref<any>([]);
 const router = useRouter();
 const loading = ref(true);
 
