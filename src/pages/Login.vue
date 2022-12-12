@@ -18,8 +18,6 @@ const login = async () => {
     user.value = data.user;
     if (data.user) {
       console.log(data.user);
-      //   authUser.updateUser(data.user);
-      //   authUser.updatetoken(data.session?.access_token ?? '');
       router.push('/account');
     }
   } catch (err) {
@@ -49,7 +47,7 @@ async function signInWithGitHub() {
           class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
         >
           <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            src="https://images.unsplash.com/photo-1623057000049-e220f79c7051?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
             class="w-full"
             alt="Sample image"
           />
@@ -60,15 +58,13 @@ async function signInWithGitHub() {
               class="flex flex-row items-center justify-center lg:justify-start"
             >
               <p class="text-lg mb-0 mr-4">Sign in with</p>
-
               <button
                 type="button"
                 @click="signInWithGitHub"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
-                class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+                class="inline-block p-3 bg-red-300 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
               >
-                <!-- Twitter -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -130,7 +126,7 @@ async function signInWithGitHub() {
               <button
                 type="button"
                 @click="login"
-                class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                class="inline-block px-7 py-3 bg-red-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out"
               >
                 Login
               </button>
@@ -138,7 +134,7 @@ async function signInWithGitHub() {
                 Don't have an account?
                 <router-link
                   to="/register"
-                  class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                  class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out"
                   >Register</router-link
                 >
               </p>

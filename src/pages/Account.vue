@@ -11,8 +11,9 @@ const loading = ref(true);
 onMounted(() => {
   supabase.auth.getSession().then(({ data }) => {
     session.value = data.session;
-    console.log(session.value);
-    getAppointments();
+    if (data.session) {
+      getAppointments();
+    }
   });
 
   supabase.auth.onAuthStateChange((_, _session) => {
@@ -57,14 +58,11 @@ async function signOut() {
 
 <template>
   <form class="form-widget">
-    <div v-if="session">
-      <label class="text-black" for="email">Email</label>
-      <input id="email" type="text" :value="session.user?.email" disabled />
-    </div>
-
-    <div>Vos rendez vous</div>
-
-    <table class="table-auto">
+    <p v-if="!session" class="text-red-500">
+      Connectez vous pour voir vos rendez-vous
+    </p>
+    <h2 class="text-black">Vos rendez vous</h2>
+    <table class="table-auto text-black w-full">
       <thead>
         <tr>
           <th>Date</th>
@@ -81,15 +79,6 @@ async function signOut() {
         </tr>
       </tbody>
     </table>
-    <div>
-      <input
-        type="submit"
-        class="button primary block text-black"
-        :value="loading ? 'Loading ...' : 'Update'"
-        :disabled="loading"
-      />
-    </div>
-
     <div>
       <button class="button block" @click.prevent="signOut" :disabled="loading">
         Sign Out
